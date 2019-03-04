@@ -3,21 +3,22 @@ const CANVAS_BORDER_WEIGHT = 4;
 const GRID_COLOR = "rgba(0, 0, 200, 0.5)";
 const BACKGROUND_COLOR = "rgb(255, 255, 255)";
 const IMAGE_TYPE = "png";
+const BUTTON_HEIGHT = 60;
 
 function initCanvas() {
   //   创建canvas
   let canvas = document.getElementById("canvas");
-  let screenHeight = screen.availHeight;
-  let screenWidth = screen.availWidth;
-  let canvasWidth = screenHeight > screenWidth ? screenWidth : screenHeight;
+  let windowHeight = window.innerHeight;
+  let windowWidth = window.innerWidth;
+  let canvasWidth = windowHeight > windowWidth ? windowWidth : windowHeight-BUTTON_HEIGHT;
   canvas.height = canvasWidth - CANVAS_BORDER_WEIGHT * 2;
-  canvas.width = canvasWidth - CANVAS_BORDER_WEIGHT * 2;
-  canvas.style.border = "4px solid red";
-  canvas.style.margin = "0 " + (screenWidth - canvasWidth) / 2 + "px";
+  canvas.width = canvas.height;
+  canvas.style.border = CANVAS_BORDER_WEIGHT +"px solid red";
+  canvas.style.margin = "0 " + (windowWidth - canvasWidth) / 2 + "px";
   //绘制网格
   let ctx = canvas.getContext("2d");
   reset(ctx, canvasWidth);
-  return { canvas, ctx, canvasWidth, screenHeight, screenWidth };
+  return { canvas, ctx, canvasWidth, windowHeight, windowWidth };
 }
 
 //   重置方法
@@ -80,7 +81,7 @@ function download(canvas, type) {
 }
 
 window.onload = () => {
-  let { canvas, ctx, canvasWidth, screenHeight, screenWidth } = initCanvas();
+  let { canvas, ctx, canvasWidth, windowHeight, windowWidth } = initCanvas();
 
   let startX = 0,
     startY = 0,
