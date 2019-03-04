@@ -14,7 +14,7 @@ function initCanvas() {
   canvas.height = canvasWidth - CANVAS_BORDER_WEIGHT * 2;
   canvas.width = canvas.height;
   canvas.style.border = CANVAS_BORDER_WEIGHT +"px solid red";
-  canvas.style.margin = "0 " + (windowWidth - canvasWidth) / 2 + "px";
+  // canvas.style.margin = "0 " + (windowWidth - canvasWidth) / 2 + "px";
   //绘制网格
   let ctx = canvas.getContext("2d");
   reset(ctx, canvasWidth);
