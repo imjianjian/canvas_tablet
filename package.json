@@ -1,0 +1,27 @@
+{
+  "name": "canvas-tablet",
+  "version": "1.0.0",
+  "description": "canvas tablet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/imjianjian/canvas_tablet.git"
+  },
+  "keywords": [
+    "canvas",
+    "tablet"
+  ],
+  "author": "imjianjian",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/imjianjian/canvas_tablet/issues"
+  },
+  "homepage": "https://github.com/imjianjian/canvas_tablet#readme",
+  "devDependencies": {
+    "parcel": "^1.11.0",
+    "parcel-bundler": "^1.11.0"
+  }
+}
