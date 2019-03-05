@@ -12,7 +12,7 @@ export  function initCanvas() {
   canvas.style.border = CANVAS_BORDER_WEIGHT + "px solid red";
   //绘制网格
   let ctx = canvas.getContext("2d");
-  reset(ctx, canvasWidth);
+  reset(ctx, canvas.width);
   return true;
 }
 
@@ -27,6 +27,8 @@ export function getCanvas(){
 
 //   重置方法
 export function reset(ctx, canvasWidth) {
+  //加上border
+  canvasWidth+= + CANVAS_BORDER_WEIGHT * 2;
   ctx.clearRect(0, 0, canvasWidth, canvasWidth);
   ctx.fillStyle = BACKGROUND_COLOR;
   ctx.fillRect(0, 0, canvasWidth, canvasWidth);
